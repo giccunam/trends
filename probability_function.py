@@ -18,9 +18,8 @@ class P_function:
                 data.append(line)
         for line in data:
             row = line.split(',')
-            print(row)
+            #print(row)
             self.P[int(row[0])] = [float(row[1]),float(row[2]),float(row[3])]
     
-
-    def get_range(age):
+    def get_range(self,age):
         return self.P[age]

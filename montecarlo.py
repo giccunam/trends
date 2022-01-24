@@ -5,8 +5,8 @@
 from probability_function import P_function
 
 class Montecarlo:
-    P_by_age = P_function()
-    population = Population()
+    #P_by_age = P_function()
+    #population = Population()
     poll = {}
     
     def __init__(self, P, population):
@@ -18,7 +18,11 @@ class Montecarlo:
         
         
     def vote(self):
+        self.poll['A'] = 0
+        self.poll['B'] = 0
+        self.poll['C'] = 0
         for person in self.population:
+            #print(person.age)
             range_of_probability = self.P_by_age.get_range(person.age)
             candidate = person.vote(range_of_probability)
             self.poll[candidate] = self.poll[candidate] + 1            
